@@ -17,7 +17,7 @@ const validate = (req: Request, res: Response, next: NextFunction) => {
   if (error.isEmpty()) {
     return next();
   }
-  const err = {
+  const err: CustomError = {
     statusCode: 400,
     message: error.array()
   };
