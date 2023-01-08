@@ -38,7 +38,7 @@ export default {
         .exists()
         .withMessage('the password is required')
         .isString()
-        .withMessage('The password should be strong')
+        .withMessage('The password should be string')
     ],
     authenticate: [
       body('userName')
@@ -51,7 +51,7 @@ export default {
         .exists()
         .withMessage('the password is required')
         .isString()
-        .withMessage('The password should be strong')
+        .withMessage('The password should be string')
     ],
 
     getById: [
@@ -102,7 +102,7 @@ export default {
         .exists()
         .withMessage('the password is required')
         .isString()
-        .withMessage('The password should be strong')
+        .withMessage('The password should be string')
     ],
     delete: [
       header('token')
