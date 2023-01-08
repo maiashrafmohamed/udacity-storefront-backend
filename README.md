@@ -1,4 +1,4 @@
-# udacity-storefront-backend
+# Udacity-storefront-backend
 
 # User API
 
@@ -51,7 +51,6 @@ Methos: POST
 
 **Payload:**
 ```sh
-composer require middlewares/payload
 {
     "firstName": "Mai",
     "lastName": "Ashraf",
@@ -74,7 +73,6 @@ Methos: PUT
 
 **Payload:**
 ```sh
-composer require middlewares/payload
 {
     "id": 1
     "firstName": "Mai",
@@ -98,7 +96,6 @@ Methos: DELETE
 
 **Payload:**
 ```sh
-composer require middlewares/payload
 {
     "id": 1
 }
@@ -113,7 +110,6 @@ Methos: POST
 
 **Payload:**
 ```sh
-composer require middlewares/payload
 {
     "userName": "maiAshraf",
     "password": "123456"
@@ -122,7 +118,6 @@ composer require middlewares/payload
 
 **Response:**
 ```sh
-composer require middlewares/payload
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJGhtN05rQmyczIxbEQvdFNHL3c5TXVmRUFhcEFmVzQuazF5UUdBNUdzWXYydWYzZ1ZIUzFXIn0sImlhdCI6MTY3MzE1MjY1N30.HsRUx9REVWoEQbyUunEA2N82R6pfh30BbM0aFYdtkMg"
 }
