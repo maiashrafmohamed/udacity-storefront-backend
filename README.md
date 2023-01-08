@@ -89,6 +89,7 @@ Method: PUT
 ## delete user
 
 URL: http://localhost:3000/api/users 
+
 Method: DELETE
 
 **headers**
