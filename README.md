@@ -5,8 +5,9 @@
 ## Get Users
 
 
-URL: http://localhost:3000/api/users
-Methos: GET
+URL: http://localhost:3000/api/users 
+
+Method: GET
 
 
 **headers**
@@ -20,7 +21,8 @@ Methos: GET
 
 
 URL: http://localhost:3000/api/users/:id
-Methos: GET
+
+Method: GET
 
 
 **headers**
@@ -40,7 +42,8 @@ Methos: GET
 ## Add user
 
 URL: http://localhost:3000/api/users 
-Methos: POST
+
+Method: POST
 
 **headers**
 
@@ -62,7 +65,8 @@ Methos: POST
 ## Update user
 
 URL: http://localhost:3000/api/users 
-Methos: PUT
+
+Method: PUT
 
 **headers**
 
@@ -85,7 +89,7 @@ Methos: PUT
 ## delete user
 
 URL: http://localhost:3000/api/users 
-Methos: DELETE
+Method: DELETE
 
 **headers**
 
@@ -106,7 +110,8 @@ Methos: DELETE
 Authenticate user for login and return the token
 
 URL: http://localhost:3000/api/users/authenticate 
-Methos: POST
+
+Method: POST
 
 **Payload:**
 ```sh
