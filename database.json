@@ -1,0 +1,16 @@
+{
+    "dev": {
+      "user": { "ENV": "STOREFRONT_USER" },
+      "password": { "ENV": "STOREFRONT_PASSWORD" },
+      "host": { "ENV": "STORFRONT_HOST" },
+      "database": { "ENV": "STOREFRONT_DB" },
+      "driver": "pg"
+    },
+    "test": {
+      "user": { "ENV": "STOREFRONT_USER" },
+      "password": { "ENV": "STOREFRONT_PASSWORD" },
+      "host": { "ENV": "STORFRONT_HOST" },
+      "database": { "ENV": "STOREFRONT_DB_TEST" },
+      "driver": "pg"
+    }
+  }

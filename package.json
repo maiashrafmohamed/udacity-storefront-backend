@@ -1,5 +1,5 @@
 {
-  "name": "image-processing",
+  "name": "storefront_backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,28 +14,35 @@
   "author": "Mai Ashraf",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.15",
     "@types/jasmine": "^4.3.1",
+    "@types/jsonwebtoken": "^9.0.0",
     "@types/node": "^18.11.16",
+    "@types/pg": "^8.6.6",
     "@types/sharp": "^0.31.0",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "nodemon": "^2.0.20",
-    "prettier": "^1.19.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.4",
     "jasmine": "^4.5.0",
     "jasmine-spec-reporter": "^7.0.0",
-    "supertest": "^6.3.3"
+    "nodemon": "^2.0.20",
+    "prettier": "^1.19.1",
+    "supertest": "^6.3.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-validator": "^6.14.2",
-    "fs": "0.0.1-security",
-    "sharp": "^0.31.2"
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.8.0"
   }
 }
