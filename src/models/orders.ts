@@ -2,12 +2,12 @@ import client from '../database';
 
 export interface Order {
   id?: number;
-  user_id: string;
+  user_id: number;
   status: Status;
 }
 
 export enum Status {
-  COMPLETE = 'complete',
+  COMPLETE = 'completed',
   ACTIVE = 'active'
 }
 
@@ -97,7 +97,7 @@ export class OrdersModel {
    * get all order with all products data name price quantity and status
    * @returns Promise<Order[]>
    */
-  async getOrdersByUserId(userID: number): Promise<Order[]> {
+  async getOrdersByUserId(userID: number): Promise<any[]> {
     try {
       const connection = await client.connect();
       const query = `SELECT
