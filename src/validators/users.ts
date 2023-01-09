@@ -16,19 +16,19 @@ export default {
         .isString()
         .withMessage('The Authentication token should be string'),
 
-      body('firstName')
+      body('firstname')
         .exists()
         .withMessage('the firstName is required')
         .isString()
         .withMessage('The firstName should be string'),
 
-      body('lastName')
+      body('lastname')
         .exists()
         .withMessage('the lastName is required')
         .isString()
         .withMessage('The lastName should be string'),
 
-      body('userName')
+      body('username')
         .exists()
         .withMessage('the userName is required')
         .isString()
@@ -41,7 +41,7 @@ export default {
         .withMessage('The password should be string')
     ],
     authenticate: [
-      body('userName')
+      body('username')
         .exists()
         .withMessage('the userName is required')
         .isString()
@@ -80,19 +80,19 @@ export default {
         .isNumeric()
         .withMessage('The ID should be number'),
 
-      body('firstName')
+      body('firstname')
         .exists()
         .withMessage('the firstName is required')
         .isString()
         .withMessage('The firstName should be string'),
 
-      body('lastName')
+      body('lastname')
         .exists()
         .withMessage('the lastName is required')
         .isString()
         .withMessage('The lastName should be string'),
 
-      body('userName')
+      body('username')
         .exists()
         .withMessage('the userName is required')
         .isString()
