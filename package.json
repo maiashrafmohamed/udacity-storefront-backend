@@ -9,8 +9,8 @@
     "prettier": "prettier --config .prettierrc src/**/*.ts --write",
     "buildAll": "npm run build && node build/app.js",
     "start": "nodemon src/app.ts",
-    "test": "npm run build && jasmine"
-  },
+    "test": "npm run build && set ENV=test&& db-migrate --env test up && jasmine && db-migrate --env test reset"
+},
   "author": "Mai Ashraf",
   "license": "ISC",
   "devDependencies": {

@@ -1,13 +1,12 @@
 import client from '../database';
-
 import bcrypt from 'bcrypt';
 
 export interface User {
   id?: number;
-  firstName?: string;
-  lastName?: string;
+  firstname?: string;
+  lastname?: string;
   password: string;
-  userName: string;
+  username: string;
 }
 const { PEPPER, SALT_ROUNDS } = process.env;
 
@@ -49,7 +48,7 @@ export class UsersModel {
    * Create new user
    * check if username is exist before
    * if yes throw error user is already exist
-   * else hash the password 
+   * else hash the password
    * then add user into database
    * @param user type User (firstname,lastname,password)
    * @returns user
@@ -59,7 +58,7 @@ export class UsersModel {
       const connection = await client.connect();
       const searchUsersql: string =
         'SELECT password FROM users WHERE userName=($1)';
-      const userExist = await connection.query(searchUsersql, [user.userName]);
+      const userExist = await connection.query(searchUsersql, [user.username]);
 
       if (!userExist.rows.length) {
         const sql =
@@ -68,13 +67,15 @@ export class UsersModel {
           user.password + PEPPER,
           Number(SALT_ROUNDS)
         );
+
         const result = await connection.query(sql, [
-          user.firstName,
-          user.lastName,
-          user.userName,
+          user.firstname,
+          user.lastname,
+          user.username,
           passwordHash
         ]);
         connection.release();
+
         return result.rows[0];
       } else {
         throw new Error('User is already exsist');
@@ -100,17 +101,16 @@ export class UsersModel {
       const connection = await client.connect();
       const sql: string = 'SELECT password FROM users WHERE userName=($1)';
 
-      const result = await connection.query(sql, [user.userName]);
+      const result = await connection.query(sql, [user.username]);
 
       if (result.rows.length) {
         const loggedInUser: User = result.rows[0];
         if (bcrypt.compareSync(user.password + PEPPER, loggedInUser.password)) {
           connection.release();
-
+          
           return loggedInUser;
         } else {
           connection.release();
-
           throw new Error('Incorrect Password');
         }
       } else {
@@ -138,9 +138,9 @@ export class UsersModel {
         Number(SALT_ROUNDS)
       );
       const result = await connection.query(sql, [
-        user.firstName,
-        user.lastName,
-        user.userName,
+        user.firstname,
+        user.lastname,
+        user.username,
         passwordHash,
         user.id
       ]);
