@@ -19,7 +19,7 @@ const verifyAuthenticationToken = (req: Request, res: Response, next: NextFuncti
     next();
   } catch (error) {
     const err: CustomError = {
-        statusCode: 400,
+        statusCode: 401,
         message: 'token is invalid'
     }
    return next(err);
