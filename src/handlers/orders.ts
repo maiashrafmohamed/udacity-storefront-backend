@@ -71,7 +71,6 @@ const getOrdersByUserId = async (
 ) => {
   try {
     const userId: number = Number(req.params.userId);
-    console.log(await orders.getOrdersByUserId(userId));
     const ordersByUser: Order[] = await orders.getOrdersByUserId(userId);
     // check if the orders are exist
     if (ordersByUser.length) {
@@ -89,7 +88,7 @@ const getOrdersByUserId = async (
 };
 
 /**
- * get conpleted orders By UserId
+ * get completed orders By UserId
  * check if the orders is exist
  * if yes return it
  * else send error active order not found

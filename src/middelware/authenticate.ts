@@ -11,9 +11,8 @@ import { CustomError } from '../models/error';
  */
 const verifyAuthenticationToken = (req: Request, res: Response, next: NextFunction) => {
   try {
-    const authorizationHeader: string = req.headers.token as string;
-    const token = authorizationHeader.split(' ')[1];
-    // check if the token is valid
+    const tokenHeader: string = req.headers.token as string;
+    const token = tokenHeader.split(' ')[1];
     jwt.verify(token, process.env.TOKEN_SECRET as string);
 
     next();

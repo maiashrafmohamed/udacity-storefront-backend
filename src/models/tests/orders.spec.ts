@@ -35,7 +35,7 @@ describe('Orders Model', () => {
     });
     id = res.id as number;
 
-    const orderProduct = await orderProductModel.addProductIntoOrder({
+    await orderProductModel.addProductIntoOrder({
       order_id: id as number,
       product_id: productId,
       quantity: 2

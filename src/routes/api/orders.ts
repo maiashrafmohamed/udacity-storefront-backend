@@ -6,7 +6,7 @@ import validateAuthToken from '../../middelware/authenticate';
 
 const router = express.Router();
 
-/**Create active order by userId POST /orders/active/user:userId */
+/**Create active order by userId GET /orders/active/user:userId */
 router.get(
   '/active/user/:userId',
   orderValidators.orders.getOrdersByUserId,
@@ -15,7 +15,7 @@ router.get(
   orders.getActiveOrderByUserIdIncart
 );
 
-/**Create active order by userId POST /orders/active/user:userId */
+/**Create active order by userId GET /orders/active/user:userId */
 router.get(
   '/completed/user/:userId',
   orderValidators.orders.getOrdersByUserId,
