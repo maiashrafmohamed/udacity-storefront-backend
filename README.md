@@ -43,7 +43,9 @@ GRANT ALL ON SCHEMA public TO store;
 
 npm install
 
+**To create tables**
 
+db-migrate up
 
 **To build type script**
 
