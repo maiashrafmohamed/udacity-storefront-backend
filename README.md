@@ -40,7 +40,7 @@ TOKEN_SECRET=secrectKey
 
 ## Users API
 
-### Get Users
+### Index: Get Users
 
 
 URL: http://localhost:3000/api/users 
@@ -55,7 +55,7 @@ Method: GET
 | -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     `token` | yes | string  | The jwt token ex: Bearer token            |
 
-### Get user By Id
+### Show: Get user By Id
 
 
 URL: http://localhost:3000/api/users/:id
@@ -77,17 +77,11 @@ Method: GET
 |     `id` | yes | number  | The user id             |
 
 
-## Add user
+## Create: Add user
 
 URL: http://localhost:3000/api/users/register 
 
 Method: POST
-
-**headers**
-
-|          Name | Mandatory |  Type   | Description                                                                                                                                                           |
-| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     `token` | yes | string  | The jwt token ex: Bearer token            |
 
 
 **Payload:**
@@ -100,7 +94,7 @@ Method: POST
 }
 ```
 
-### Update user
+### Update: Update user
 
 URL: http://localhost:3000/api/users 
 
@@ -124,7 +118,7 @@ Method: PUT
 }
 ```
 
-### delete user
+### Delete: delete user
 
 URL: http://localhost:3000/api/users 
 
@@ -171,13 +165,13 @@ Method: POST
 
 ## Products API
 
-### Get Products
+### Index: Get Products
 
 URL: http://localhost:3000/api/products
 
 Method: GET
 
-### Get Product By Id
+### Show: Get Product By Id
 
 URL: http://localhost:3000/api/products/:id
 
@@ -190,7 +184,7 @@ Method: GET
 |     `id` | yes | number  | The product id             |
 
 
-## Add Product
+## Create: Add Product
 
 URL: http://localhost:3000/api/products 
 
@@ -212,7 +206,7 @@ Method: POST
 }
 ```
 
-### Update Product
+### Update: Update Product
 
 URL: http://localhost:3000/api/products 
 
@@ -235,7 +229,7 @@ Method: PUT
 }
 ```
 
-### delete Product
+### Delete: delete Product
 
 URL: http://localhost:3000/api/products 
 
