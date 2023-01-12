@@ -35,6 +35,12 @@ GRANT ALL ON SCHEMA public TO store;
 
 ## To Run the app
 
+**To install npm packages**
+
+npm install
+
+
+
 **To build type script**
 
 npm run build
