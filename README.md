@@ -2,6 +2,9 @@
 
 ## setup and connect to the database
 
+**connect to default postgres database as the server root user's**
+ psql -U postgres
+
 **In psql run To Create user**
 
 CREATE USER store WITH PASSWORD 'store';
@@ -17,6 +20,7 @@ CREATE DATABASE db_store_test;
 **connect database and GRANT ALL privileges**
 
 **Grant for dev DB**
+
 /c db_store
 
 GRANT ALL PRIVILEGES ON DATABASE db_store TO store;
