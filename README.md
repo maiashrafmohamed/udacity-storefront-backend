@@ -94,6 +94,30 @@ Method: POST
 }
 ```
 
+## Login and authenticate user for login and provide token
+
+Authenticate user for login and return the token
+
+URL: http://localhost:3000/api/users/login/authenticate 
+
+Method: POST
+
+**Payload:**
+```sh
+{
+    "userName": "maiAshraf",
+    "password": "123456"
+}
+```
+
+**Response:**
+```sh
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJGhtN05rQmyczIxbEQvdFNHL3c5TXVmRUFhcEFmVzQuazF5UUdBNUdzWXYydWYzZ1ZIUzFXIn0sImlhdCI6MTY3MzE1MjY1N30.HsRUx9REVWoEQbyUunEA2N82R6pfh30BbM0aFYdtkMg"
+}
+```
+
+
 ## Update: Update user
 
 URL: http://localhost:3000/api/users 
@@ -135,29 +159,6 @@ Method: DELETE
 ```sh
 {
     "id": 1
-}
-```
-
-## Login and authenticate user for login and provide token
-
-Authenticate user for login and return the token
-
-URL: http://localhost:3000/api/users/login/authenticate 
-
-Method: POST
-
-**Payload:**
-```sh
-{
-    "userName": "maiAshraf",
-    "password": "123456"
-}
-```
-
-**Response:**
-```sh
-{
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJGhtN05rQmyczIxbEQvdFNHL3c5TXVmRUFhcEFmVzQuazF5UUdBNUdzWXYydWYzZ1ZIUzFXIn0sImlhdCI6MTY3MzE1MjY1N30.HsRUx9REVWoEQbyUunEA2N82R6pfh30BbM0aFYdtkMg"
 }
 ```
 
