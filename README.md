@@ -1,5 +1,38 @@
 # Udacity-storefront-backend
 
+## setup and connect to the database
+
+**In psql run To Create user**
+
+CREATE USER store WITH PASSWORD 'store';
+
+**In psql run To Create dev database**
+
+CREATE DATABASE db_store; 
+
+**In psql run To Create test database**
+
+CREATE DATABASE db_store_test; 
+
+**connect database and GRANT ALL privileges**
+
+**Grant for dev DB**
+/c db_store
+
+GRANT ALL PRIVILEGES ON DATABASE db_store TO store;
+
+GRANT ALL ON SCHEMA public TO store;
+
+
+**Grant for test DB**
+
+/c db_store_test
+
+GRANT ALL PRIVILEGES ON DATABASE db_store_test TO store;
+
+GRANT ALL ON SCHEMA public TO store;
+
+
 ## To Run the app
 
 **To build type script**
@@ -26,14 +59,15 @@ npm run prettier
 
 ```sh
 STORFRONT_HOST=localhost
-STOREFRONT_DB=dataBase_name
-STOREFRONT_DB_TEST=dataBase_name_test
-STOREFRONT_USER=username
-STOREFRONT_PASSWORD=password
+STOREFRONT_DB=db_store
+STOREFRONT_DB_TEST=db_store_test
+STOREFRONT_USER=store
+STOREFRONT_PASSWORD=store
 ENV=dev
 PEPPER=store_pass
 SALT_ROUNDS=10
-TOKEN_SECRET=secrectKey
+TOKEN_SECRET=stotesecrettoken2023
+
 ```
 
 # End points
