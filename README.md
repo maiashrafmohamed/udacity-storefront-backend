@@ -207,6 +207,21 @@ Method: POST
 }
 ```
 
+## get Products By Category
+
+Get all products with same category
+
+URL: http://localhost:3000/api/products/category/:category
+
+Method: GET
+
+**Parameters**
+
+|          Name | Mandatory |  Type   | Description                                                                                                                                                           |
+| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     `category` | yes | number  | The category name             |
+
+
 ## Update: Update Product
 
 URL: http://localhost:3000/api/products 
@@ -249,21 +264,6 @@ Method: DELETE
     "id": 1
 }
 ```
-
-## get Products By Category
-
-Get all products with same category
-
-URL: http://localhost:3000/api/products/category/:category
-
-Method: GET
-
-**Parameters**
-
-|          Name | Mandatory |  Type   | Description                                                                                                                                                           |
-| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     `category` | yes | number  | The category name             |
-
 
 ----------------------
 
