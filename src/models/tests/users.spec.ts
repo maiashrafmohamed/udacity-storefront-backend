@@ -70,5 +70,4 @@ describe('Users Model', () => {
     expect(user.lastname).toBe('Ashraf');
     expect(user.username).toBe('MaiAshraf');
   });
-
 });

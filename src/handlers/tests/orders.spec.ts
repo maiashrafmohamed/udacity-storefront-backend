@@ -22,7 +22,7 @@ describe('Testing Orders Apis', () => {
     const users = await userModel.create(user);
     userId = users.id as number;
     await request
-      .post('/api/users/authenticate')
+      .post('/api/users/login/authenticate')
       .send({
         username: user.username,
         password: user.password

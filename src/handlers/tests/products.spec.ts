@@ -17,7 +17,7 @@ describe('Testing Products Apis', () => {
   beforeAll(async () => {
     await userModel.create(user);
     await request
-      .post('/api/users/authenticate')
+      .post('/api/users/login/authenticate')
       .send({
         username: user.username,
         password: user.password

@@ -13,7 +13,7 @@ export default {
         .exists()
         .withMessage('the user ID is required')
         .isNumeric()
-        .withMessage('The user ID should be number'),
+        .withMessage('The user ID should be number')
     ],
     add: [
       header('token')
@@ -32,8 +32,7 @@ export default {
         .exists()
         .withMessage('the status is required')
         .isString()
-        .withMessage('The status should be string'),
-    ],
-
+        .withMessage('The status should be string')
+    ]
   }
 };

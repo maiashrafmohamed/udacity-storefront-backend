@@ -10,7 +10,11 @@ const orderProduct = new OrderProductModel();
  * @param next the next function
  */
 
-const addProductIntoOrder = async (req: Request, res: Response, next: NextFunction) => {
+const addProductIntoOrder = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const order: Order_Product = req.body;
     const newOrder = await orderProduct.addProductIntoOrder(order);
@@ -19,6 +23,5 @@ const addProductIntoOrder = async (req: Request, res: Response, next: NextFuncti
     next(err);
   }
 };
-
 
 export default { addProductIntoOrder };

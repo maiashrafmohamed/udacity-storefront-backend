@@ -65,7 +65,7 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
 
 /**
  * show: get product by category
- * check if there are products 
+ * check if there are products
  * if yes return it
  * else send error products not found
  * @param req the api request
@@ -73,7 +73,11 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
  * @param next the next function
  */
 
-const getProductsByCategory = async (req: Request, res: Response, next: NextFunction) => {
+const getProductsByCategory = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const category = req.params.category;
     const productsByCategory = await products.getProductsByCategory(category);
@@ -129,7 +133,11 @@ const update = async (req: Request, res: Response, next: NextFunction) => {
  * @param next the next function
  */
 
-const deleteProduct = async (req: Request, res: Response, next: NextFunction) => {
+const deleteProduct = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const id = req.body.id;
     const deletedProduct = await products.delete(id);
@@ -148,4 +156,11 @@ const deleteProduct = async (req: Request, res: Response, next: NextFunction) =>
   }
 };
 
-export default { create, index, show, deleteProduct, update, getProductsByCategory };
+export default {
+  create,
+  index,
+  show,
+  deleteProduct,
+  update,
+  getProductsByCategory
+};

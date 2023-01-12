@@ -62,15 +62,15 @@ export class OrdersModel {
     }
   }
 
-    /**
+  /**
    * get completed orders for the user by user id
    * get the completed orders with the all products details name price quantity and status
    * @returns Promise<any[]>
    */
-    async getCompleltedOrdersByUserId(userID: number): Promise<any[]> {
-      try {
-        const connection = await client.connect();
-        const query = `SELECT
+  async getCompleltedOrdersByUserId(userID: number): Promise<any[]> {
+    try {
+      const connection = await client.connect();
+      const query = `SELECT
             product.name AS product_name,
             product.price AS product_price,
             op.quantity AS quantity
@@ -80,17 +80,16 @@ export class OrdersModel {
             INNER JOIN products product ON op.product_id = product.id
             WHERE users.id = $1 AND orders.status = 'completed'
             `;
-  
-        const result = await connection.query(query, [userID]);
-        connection.release();
-        return result.rows;
-      } catch (error) {
-        throw new Error(
-          `error when to get the completed Orders by user ID: ${error}`
-        );
-      }
+
+      const result = await connection.query(query, [userID]);
+      connection.release();
+      return result.rows;
+    } catch (error) {
+      throw new Error(
+        `error when to get the completed Orders by user ID: ${error}`
+      );
     }
-  
+  }
 
   /**
    * get all orders by user id
@@ -113,7 +112,7 @@ export class OrdersModel {
         WHERE users.id = $1
         `;
 
-        const result = await connection.query(query, [userID]);
+      const result = await connection.query(query, [userID]);
       connection.release();
       return result.rows;
     } catch (error) {

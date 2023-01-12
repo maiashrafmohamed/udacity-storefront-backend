@@ -21,7 +21,7 @@ describe('Testing Order_producst Api', () => {
     const users = await userModel.create(user);
     userId = users.id as number;
     await request
-      .post('/api/users/authenticate')
+      .post('/api/users/login/authenticate')
       .send({
         username: user.username,
         password: user.password
@@ -70,25 +70,25 @@ describe('Testing Order_producst Api', () => {
   describe('Create addProductIntoOrder POST  api', () => {
     it('should return sucess when call create addProductIntoOrder method with valid token and param', async () => {
       await request
-      .post('/api/order_product')
-      .set('token', `Bearer ${token}`)
-      .send({
-        product_id: productId,
-        order_id: orderId,
-        quantity: 2
-      })
-      .expect(200);
+        .post('/api/order_product')
+        .set('token', `Bearer ${token}`)
+        .send({
+          product_id: productId,
+          order_id: orderId,
+          quantity: 2
+        })
+        .expect(200);
     });
 
     it('should return failed 401 when call create addProductIntoOrder method with invalid token', async () => {
       await request
-      .post('/api/order_product')
+        .post('/api/order_product')
         .set('token', `Bearer invalidToken`)
         .send({
           product_id: productId,
           order_id: orderId,
           quantity: 2
-          })
+        })
         .expect(401)
         .then((res: any) => {
           expect(res._body.description).toBe('token is invalid');
@@ -102,7 +102,7 @@ describe('Testing Order_producst Api', () => {
         .send({
           product_id: productId,
           quantity: 2
-          })
+        })
         .expect(400);
     });
   });

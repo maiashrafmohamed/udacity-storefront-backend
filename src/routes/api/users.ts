@@ -25,13 +25,7 @@ router.get(
 );
 
 /**Create new user POST /users */
-router.post(
-  '/',
-  userValidators.users.add,
-  validate,
-  validateAuthToken,
-  users.create
-);
+router.post('/register', userValidators.users.add, validate, users.create);
 
 /** Update user PUT /users */
 router.put(
@@ -51,9 +45,9 @@ router.delete(
   users.deleteUser
 );
 
-/** authenticate user loggedin POST /users/authenticate */
+/** authenticate user loggedin POST /users/login/authenticate */
 router.post(
-  '/authenticate',
+  '/login/authenticate',
   userValidators.users.authenticate,
   validate,
   users.authenticate

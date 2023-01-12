@@ -9,7 +9,11 @@ import { CustomError } from '../models/error';
  * @param res the api response
  * @param next next ()
  */
-const verifyAuthenticationToken = (req: Request, res: Response, next: NextFunction) => {
+const verifyAuthenticationToken = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const tokenHeader: string = req.headers.token as string;
     const token = tokenHeader.split(' ')[1];
@@ -18,10 +22,10 @@ const verifyAuthenticationToken = (req: Request, res: Response, next: NextFuncti
     next();
   } catch (error) {
     const err: CustomError = {
-        statusCode: 401,
-        message: 'token is invalid'
-    }
-   return next(err);
+      statusCode: 401,
+      message: 'token is invalid'
+    };
+    return next(err);
   }
 };
 

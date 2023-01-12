@@ -34,7 +34,6 @@ describe('OrderProduct Model', () => {
       status: Status.ACTIVE
     });
     orderId = res.id as number;
-
   });
 
   it('Should add product to order when call method addProductIntoOrder', async () => {
@@ -48,8 +47,6 @@ describe('OrderProduct Model', () => {
       order_id: orderId as number,
       product_id: productId,
       quantity: 1
-
     });
   });
-
 });

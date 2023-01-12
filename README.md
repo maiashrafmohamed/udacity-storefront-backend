@@ -148,7 +148,7 @@ Method: DELETE
 
 Authenticate user for login and return the token
 
-URL: http://localhost:3000/api/users/authenticate 
+URL: http://localhost:3000/api/users/login/authenticate 
 
 Method: POST
 

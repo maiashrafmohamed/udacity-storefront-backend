@@ -56,8 +56,7 @@ export class UsersModel {
   async create(user: User): Promise<User> {
     try {
       const connection = await client.connect();
-      const searchUsersql: string =
-        'SELECT password FROM users WHERE userName=($1)';
+      const searchUsersql = 'SELECT password FROM users WHERE userName=($1)';
       const userExist = await connection.query(searchUsersql, [user.username]);
 
       if (!userExist.rows.length) {
@@ -99,7 +98,7 @@ export class UsersModel {
   async authenticate(user: User): Promise<User> {
     try {
       const connection = await client.connect();
-      const sql: string = 'SELECT password FROM users WHERE userName=($1)';
+      const sql = 'SELECT password FROM users WHERE userName=($1)';
 
       const result = await connection.query(sql, [user.username]);
 
@@ -107,7 +106,7 @@ export class UsersModel {
         const loggedInUser: User = result.rows[0];
         if (bcrypt.compareSync(user.password + PEPPER, loggedInUser.password)) {
           connection.release();
-          
+
           return loggedInUser;
         } else {
           connection.release();

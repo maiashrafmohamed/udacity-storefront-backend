@@ -46,7 +46,7 @@ describe('Products Model', () => {
   it('should return all product with same category when call getProductsByCategory method', async () => {
     const products = await productModel.getProductsByCategory('Mobile');
 
-    expect(products.length).toBeGreaterThan(1)
+    expect(products.length).toBeGreaterThan(1);
   });
 
   it('should update a specific product when call update method', async () => {

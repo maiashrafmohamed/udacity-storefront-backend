@@ -79,7 +79,7 @@ const authenticate = async (
   try {
     const user = await users.authenticate(req.body);
     /**generate jwt token */
-    var token = jwt.sign({ user: user }, process.env.TOKEN_SECRET as string);
+    const token = jwt.sign({ user: user }, process.env.TOKEN_SECRET as string);
     res.json({ token: token });
   } catch (err) {
     next(err);

@@ -37,8 +37,10 @@ const getActiveOrderByUserIdIncart = async (
   next: NextFunction
 ) => {
   try {
-    const userId: number = Number(req.params.userId);
-    const activeOrderWithProducts = await orders.getActiveOrderByUserIdIncart(userId);
+    const userId = Number(req.params.userId);
+    const activeOrderWithProducts = await orders.getActiveOrderByUserIdIncart(
+      userId
+    );
     // check if there is active order
     if (activeOrderWithProducts.length) {
       res.send({ products: activeOrderWithProducts });
@@ -70,7 +72,7 @@ const getOrdersByUserId = async (
   next: NextFunction
 ) => {
   try {
-    const userId: number = Number(req.params.userId);
+    const userId = Number(req.params.userId);
     const ordersByUser: Order[] = await orders.getOrdersByUserId(userId);
     // check if the orders are exist
     if (ordersByUser.length) {
@@ -103,7 +105,7 @@ const getCompleltedOrdersByUserId = async (
   next: NextFunction
 ) => {
   try {
-    const userId: number = Number(req.params.userId);
+    const userId = Number(req.params.userId);
     const completedOrders = await orders.getCompleltedOrdersByUserId(userId);
     // check if there is completed orders
     if (completedOrders.length) {

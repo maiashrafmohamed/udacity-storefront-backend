@@ -18,7 +18,7 @@ describe('Testing Users Apis', () => {
     const res = await userModel.create(user);
     userId = res.id as number;
     const auth = await request
-      .post('/api/users/authenticate')
+      .post('/api/users/login/authenticate')
       .send({
         username: user.username,
         password: user.password
@@ -51,7 +51,7 @@ describe('Testing Users Apis', () => {
   describe('authenticate api', () => {
     it('should return sucess 200 and return token when call authenticate POST method with valid param', async () => {
       await request
-        .post('/api/users/authenticate')
+        .post('/api/users/login/authenticate')
         .send({
           username: user.username,
           password: user.password
@@ -64,7 +64,7 @@ describe('Testing Users Apis', () => {
 
     it('should return failed 400 Bad request when authenticate method with invalid body', async () => {
       await request
-        .post('/api/users/authenticate')
+        .post('/api/users/login/authenticate')
         .set('token', `Bearer ${token}`)
         .send({
           username: 'testtest22'
@@ -73,10 +73,10 @@ describe('Testing Users Apis', () => {
     });
   });
 
-  describe('Create POST  api', () => {
+  describe('Create POST register user api', () => {
     it('should return sucess when call create method with valid token and param', async () => {
       await request
-        .post('/api/users')
+        .post('/api/users/register')
         .set('token', `Bearer ${token}`)
         .send({
           firstname: 'testcreate',
@@ -90,25 +90,9 @@ describe('Testing Users Apis', () => {
         });
     });
 
-    it('should return failed 401 when call create method with invalid token', async () => {
-      await request
-        .post('/api/users')
-        .set('token', `Bearer invalidToken`)
-        .send({
-          firstname: 'testcreate4',
-          lastname: 'lastname',
-          username: 'testtest',
-          password: 'test'
-        })
-        .expect(401)
-        .then((res: any) => {
-          expect(res._body.description).toBe('token is invalid');
-        });
-    });
-
     it('should return failed 500 when call create method with username is already added', async () => {
       await request
-        .post('/api/users')
+        .post('/api/users/register')
         .set('token', `Bearer ${token}`)
         .send({
           firstname: 'testcreate',
@@ -126,7 +110,7 @@ describe('Testing Users Apis', () => {
 
     it('should return failed 400 Bad request when create method with invalid body', async () => {
       await request
-        .post('/api/users/')
+        .post('/api/users/register')
         .set('token', `Bearer ${token}`)
         .send({
           firstname: 'testcreate',

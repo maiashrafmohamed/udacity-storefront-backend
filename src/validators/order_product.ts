@@ -1,4 +1,4 @@
-import { param, header, body } from 'express-validator';
+import { header, body } from 'express-validator';
 
 export default {
   order_product: {

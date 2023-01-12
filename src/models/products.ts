@@ -74,8 +74,7 @@ export class ProductsModel {
   async getProductsByCategory(category: string): Promise<Product[]> {
     try {
       const connection = await client.connect();
-      const sql: string =
-        'SELECT name, price FROM products WHERE LOWER(category)=($1)';
+      const sql = 'SELECT name, price FROM products WHERE LOWER(category)=($1)';
       const result = await connection.query(sql, [category.toLowerCase()]);
       connection.release();
       return result.rows;
