@@ -79,7 +79,7 @@ Method: GET
 
 ## Add user
 
-URL: http://localhost:3000/api/users 
+URL: http://localhost:3000/api/users/register 
 
 Method: POST
 
@@ -144,7 +144,7 @@ Method: DELETE
 }
 ```
 
-### Authenticate user for login
+### Login and authenticate user for login and provide token
 
 Authenticate user for login and return the token
 
