@@ -2,6 +2,12 @@
 
 ## To Run the app
 
+**To install npm packages**
+
+npm install
+
+
+
 **To build type script**
 
 npm run build
